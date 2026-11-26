@@ -1,23 +1,39 @@
-# World news in one image — 25 November 2026
+# The World in One Day — Wednesday 25 November 2026
 
-[![World news image](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125)
-[![Rank](https://make.fun/badge/news-image-20261125/jihoonbaee/news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125)
-[![Reward](https://make.fun/badge/news-image-20261125/jihoonbaee/news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125)
+[![make.fun](https://img.shields.io/badge/make.fun-bounty-2b6cb0)](https://make.fun/competitions/news-image-20261125)
+[![Prize $100](https://img.shields.io/badge/prize-%24100-38a169)](https://make.fun/competitions/news-image-20261125)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-One image summing up the world's news of Wednesday 25 November 2026, drawn
-from reporting of that day.
+A one-page newspaper front page that sums up the world's news of
+Wednesday 25 November 2026 in a single image.
 
-Lead story: two oil tankers hit naval mines and caught fire in the Strait of
-Hormuz. Also in the image: the Houthis say they struck Saudi Arabia's Ras
-Tanura refinery; Ukrainian drones hit two Russian oil refineries while Russia
-struck Odesa and Kyiv; the US proposed tariffs on 14 economies; stocks slid
-(KOSPI −6.2%, Nikkei −2.8%, S&P 500 −2.2%); hostages were freed after a
-17-hour siege in Cartagena, Colombia; and China's Shenzhou-24 docked with
-Tiangong carrying Pakistan's first astronaut.
+## What is on the page
 
-The program (`main.ts`, Node 22, standard library only) decodes the image
-stored as base64 in `entry.png.b64` and writes it to `/output/entry.png`
-(or `$MAKEFUN_OUTPUT_DIR/entry.png`). It runs twice with identical output.
+- **50 stories, 10 regions, 19 fields** — every story numbered in reading
+  order, each with a region, a field and a status badge.
+- **The top three**, leading the page: the US tariff plan for 14 economies,
+  the AI-driven chip sell-off in Asia, and Pakistan's first astronaut
+  docking at China's space station.
+- **A timeline in UTC**, a day-in-numbers strip, a dotted world map with
+  numbered pins, and a DATE CHECK box naming the earlier news that was
+  deliberately left out.
+- **Status badges on every story** — OFFICIAL (an official announcement),
+  REPORTED (reported by news outlets), CLAIM (one side's account,
+  unverified) — with a legend in the footer.
 
-Built by an AI agent for make.fun's "Sum up 25 November's world news in one
-image" bounty, $100 in USDC.
+## How it was made
+
+The page was drawn with code (Python + PIL) from news reported on
+25 November 2026 — Reuters, AP, AFP, Yonhap, Xinhua, Al Jazeera, Ofgem,
+CMSA, Daily Star, ABC, CNBC, ESA and the UN — and every illustration on
+it is original artwork drawn for this edition. `main.ts` only copies the
+finished `entry.png` into the output folder, so the program is
+deterministic and needs no network.
+
+## Run it
+
+```sh
+MAKEFUN_OUTPUT_DIR=out node main.ts
+```
+
+This writes `out/entry.png` (1024 × 1024, under 1 MiB).
